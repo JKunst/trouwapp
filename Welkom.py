@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 #
+from streamlit_authenticator.utilities.hasher import Hasher
 st.set_page_config(initial_sidebar_state="collapsed")
 st.session_state.sidebar_state = 'collapsed'
 st.markdown(
@@ -90,21 +91,33 @@ if authentication_status:
         list_of_lists = worksheet.get_all_values()
         presenteer_data = pd.DataFrame(list_of_lists,columns=['Naam','Plus','Reactie', 'Dieetwensen','Opmerkingen','Nummer'])
         st.table(presenteer_data.iloc[1:])
-    if username == 'daggast':
+        st.markdown('''---''')
+        st.page_link("pages/Dresscode.py", label="Dresscode", icon=":material/arrow_forward:")
+        st.page_link("pages/Kadolijst.py", label="Kadolijst", icon=":material/arrow_forward:")
+        st.page_link("pages/Routebeschrijving.py", label="Routebeschrijving", icon=":material/arrow_forward:")
+
+    if username == 'bruiloftsgast':
         st.write(f'Welkom *{name}*')
         st.image('graphics/img1.jpg')
         st.subheader('De voorbereidingen zijn in volle gang')
         st.text('Voer hieronder alsjeblieft wat informatie in')
         gast_naam = st.text_input('Je naam')
         gast_plus_een = st.text_input('Je plus 1 of betere helft')
-        rsvp = st.selectbox('Je reactie:',['Ik ben er bij.','Ik ben er niet bij.','Ik ben er deels bij., bel mij om te overleggen.'])
+        rsvp = st.selectbox('Je reactie:',['Ik ben er bij.','Ik ben er niet bij.','Ik ben er deels bij, bel mij om te overleggen.'])
         dieet = st.text_input('Eventuele dieetwensen')
+        mtb = st.selectbox('Mountainbiken?',['Ik laat het nog weten','Nee, maar veel plezier.', 'Ja, ik breng mijn eigen fiets mee','Ja, huur een fiets voor mij'])
         opmerkingen = st.text_input('Aanvullend')
         telefoonnummer = st.text_input('Indien nodig je telefoonnummer')
 
         if st.button('Verzenden', key=None, help=None):
             send(gast_naam, gast_plus_een, rsvp, dieet, opmerkingen, telefoonnummer)
-
+        st.text(
+            ' \n'
+        )
+        st.markdown('''---''')
+        st.page_link("pages/Dresscode.py", label="Dresscode", icon=":material/arrow_forward:")
+        st.page_link("pages/Kadolijst.py", label="Kadolijst", icon=":material/arrow_forward:")
+        st.page_link("pages/Routebeschrijving.py", label="Routebeschrijving", icon=":material/arrow_forward:")
 
     authenticator.logout('Logout', 'main')
 elif authentication_status == False:

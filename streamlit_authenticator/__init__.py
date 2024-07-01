@@ -49,7 +49,7 @@ if not _RELEASE:
     elif st.session_state["authentication_status"] is False:
         st.error('Username/password is incorrect')
     elif st.session_state["authentication_status"] is None:
-        st.warning('Please enter your username and password')
+        st.warning('Gebruik je gegevens van de uitnodiging')
 
     # Creating a password reset widget
     if st.session_state["authentication_status"]:

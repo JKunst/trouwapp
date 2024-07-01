@@ -10,12 +10,12 @@ credentials:
       logged_in: true
       name: Rachel en Elsemieke
       password: $2b$12$iWlVOac3uujRvTrXDi6wructXftKmo/GyQd6SMu5FmyX306kH.yFO
-    daggast:
+    Bruiloftsgast:
       email: rbriggs@gmail.com
       failed_login_attempts: 0
       logged_in: false
-      name: Daggast
-      password: $2b$12$iWlVOac3uujRvTrXDi6wructXftKmo/GyQd6SMu5FmyX306kH.yFO
+      name: Bruiloftsgast
+      password: $2b$12$lPkyR2AHrTPiQff8Wq7bBO0AE040j5klCcxeo9gQV0zxBbr6qJM3K
     avondgast:
       email: rcouper@gmail.com
       failed_login_attempts: 0
