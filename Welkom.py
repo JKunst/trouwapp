@@ -42,10 +42,10 @@ sh = gc.open('Feedback gasten')
 worksheet = sh.sheet1
 
 
-def send(A1, A2, A3, A4, A5, A6):
-    data_gast = [A1, A2, A3, A4, A5, A6]
+def send(A1, A2, A3, A4, A5, A6, A7):
+    data_gast = [A1, A2, A3, A4, A5, A6, A7]
     worksheet.append_row(data_gast, table_range="A1:F1")
-    data_gast_2 = pd.DataFrame(data_gast, index=['Naam','Plus','Reactie', 'Dieetwensen','Opmerkingen','Nummer'], columns=['Je reactie'])
+    data_gast_2 = pd.DataFrame(data_gast, index=['Naam','Plus','Reactie', 'Dieetwensen', 'MTB', 'Opmerkingen','Nummer'], columns=['Je reactie'])
     return st.text('Je reactie is verzonden'), st.table(data_gast_2), st.text('Als er iets niet klopt doe je het gewoon opnieuw!')
 
 
@@ -102,7 +102,7 @@ if authentication_status:
         st.subheader('De voorbereidingen zijn in volle gang')
         st.text('Voer hieronder alsjeblieft wat informatie in')
         gast_naam = st.text_input('Je naam')
-        gast_plus_een = st.text_input('Je plus 1 of betere helft')
+        gast_plus_een = st.text_input('Je +1', value='Ik kom alleen')
         rsvp = st.selectbox('Je reactie:',['Ik ben er bij.','Ik ben er niet bij.','Ik ben er deels bij, bel mij om te overleggen.'])
         dieet = st.text_input('Eventuele dieetwensen')
         mtb = st.selectbox('Mountainbiken?',['Ik laat het nog weten','Nee, maar veel plezier.', 'Ja, ik breng mijn eigen fiets mee','Ja, huur een fiets voor mij'])
@@ -110,7 +110,7 @@ if authentication_status:
         telefoonnummer = st.text_input('Indien nodig je telefoonnummer')
 
         if st.button('Verzenden', key=None, help=None):
-            send(gast_naam, gast_plus_een, rsvp, dieet, opmerkingen, telefoonnummer)
+            send(gast_naam, gast_plus_een, rsvp, dieet, mtb, opmerkingen, telefoonnummer)
         st.text(
             ' \n'
         )
