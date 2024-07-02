@@ -63,6 +63,8 @@ if authentication_status:
 
     if username == 'bruiloftsgast':
         st.write(f'Welkom *{name}*')
+        st.write('Onderstaande kadolijst is gedeeld met alle gasten, je kan zien of een item al is afgestreept. Geef aan als je '
+                 'iets gekocht hebt')
         list_of_lists = worksheet2.get_all_values()
         presenteer_data = pd.DataFrame(list_of_lists,columns=['Kado','Beschikbaar'])
         st.button('Ververs')
@@ -71,12 +73,12 @@ if authentication_status:
              st.markdown("""---""")
              st.write(row['Kado'] + ".        "+ row['Beschikbaar'])#
              if row['Beschikbaar']=='':
-                 if st.button(label='Koop ik', key=index):
+                 if st.button(label='Streep dit af', key=index):
                      st.text('Je geeft aan dit te kopen')
-                     worksheet2.update_cell(index+1, 2, 'Dit item is gekocht!')
+                     worksheet2.update_cell(index+1, 2, 'Dit item is afgestreept!')
                      st.rerun()
              if row['Beschikbaar'] != '':
-                 if st.button(label='Ik koop dit toch niet', key=index*100):
+                 if st.button(label='Maak dit kado weer beschikbaar', key=index*100):
                     st.text('Het kado is weer beschikbaar')
                     worksheet2.update_cell(index + 1, 2, '')
                     st.rerun()
