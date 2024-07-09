@@ -93,6 +93,7 @@ if authentication_status:
     st.page_link("pages/Dresscode.py", label="Dresscode", icon=":material/arrow_forward:")
     st.page_link("Welkom.py", label="Welkom", icon=":material/arrow_forward:")
     st.page_link("pages/Routebeschrijving.py", label="Routebeschrijving", icon=":material/arrow_forward:")
+    st.page_link("pages/FAQ.py", label="FAQ", icon=":material/arrow_forward:")
                 #st.table(presenteer_data.iloc[1:])
 
     authenticator.logout('Logout', 'main')

@@ -37,14 +37,19 @@ if authentication_status:
         st.write("Als dresscode zien we u graag een beetje stijlvol en chique. \n"
                 "Lekker feestelijk, dit heet schijnbaar tenue de ville")
     if username == 'bruiloftsgast':
-        st.write(f'Welkom *{name}*')
-        st.write("Als dresscode zien we u graag een beetje stijlvol en chique. \n"
-                "Lekker feestelijk, dit heet schijnbaar tenue de ville.")
+        st.subheader('Tot hoe laat duurt het feest?')
+        st.write("Het feest eindigd om 00:00.")
+        st.subheader('Mag er gedurende de dag in de fontein gezwommen worden?')
+        st.write("Nee, het zwemmen in de fontein is alleen voor eendjes.")
+        st.subheader("Welk gereedschap moet ik meenemen om het dak eraf te halen?")
+        st.write("In principe zijn alle randvoorwaarden voor een feestje aanwezig. Een eigen schroevendraaier of 10/13 kun je thuis laten.")
+        st.subheader("Mag ik op de bar dansen.")
+        st.write("It depends.")
     st.markdown('''---''')
     st.page_link("pages/Kadolijst.py", label="Kadolijst", icon=":material/arrow_forward:")
     st.page_link("Welkom.py", label="Welkom", icon=":material/arrow_forward:")
     st.page_link("pages/Routebeschrijving.py", label="Routebeschrijving", icon=":material/arrow_forward:")
-    st.page_link("pages/FAQ.py", label="FAQ", icon=":material/arrow_forward:")
+    st.page_link("pages/Dresscode.py", label="Dresscode", icon=":material/arrow_forward:")
 
     authenticator.logout('Logout', 'main')
 elif authentication_status == False:

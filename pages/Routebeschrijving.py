@@ -53,6 +53,7 @@ if authentication_status:
         st.page_link("pages/Dresscode.py", label="Dresscode", icon=":material/arrow_forward:")
         st.page_link("Welkom.py", label="Welkom", icon=":material/arrow_forward:")
         st.page_link("pages/Kadolijst.py", label="Kadolijst", icon=":material/arrow_forward:")
+        st.page_link("pages/FAQ.py", label="FAQ", icon=":material/arrow_forward:")
 
     authenticator.logout('Logout', 'main')
 elif authentication_status == False:
