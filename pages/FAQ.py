@@ -37,7 +37,7 @@ if authentication_status:
         st.write("Als dresscode zien we u graag een beetje stijlvol en chique. \n"
                 "Lekker feestelijk, dit heet schijnbaar tenue de ville")
     if username == 'bruiloftsgast':
-        st.subheader('Tot hoe laat duurt het feest?')
+        st.subheader('Tot hoe laat duurt het  feest?')
         st.write("Het feest eindigt om 00:00.")
         st.subheader('Mag er gedurende de dag in de fontein gezwommen worden?')
         st.write("Nee, het zwemmen in de fontein is alleen voor eendjes.")
