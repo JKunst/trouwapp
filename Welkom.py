@@ -120,6 +120,73 @@ if authentication_status:
         st.page_link("pages/Routebeschrijving.py", label="Routebeschrijving", icon=":material/arrow_forward:")
         st.page_link("pages/FAQ.py", label="FAQ", icon=":material/arrow_forward:")
 
+        ########### Fotograaf
+    if username == 'fotograaf':
+
+        st.write(f'Welkom *{name}*')
+        st.image('graphics/img1.jpg')
+        st.subheader('Hieronder vind je de informatie over onze gasten')
+        #ouders
+        st.subheader('Ouders Sharon, Rienco + Marleen')
+        foto2 = st.checkbox("Gevangen", key=2)
+        st.image('graphics/rienco.jpg')
+        st.subheader('Ouders Jasper, Piet + Irene')
+        foto1 = st.checkbox("Gevangen", key=1)
+        st.image('graphics/piet.jpg')
+
+        #Zusjes
+        st.subheader('Zusje Sharon, Judith + Ivo')
+        foto5 = st.checkbox("Gevangen", key=5)
+        st.image('graphics/judith.jpg')
+
+        st.subheader('Zusje Sharon, Rachel + Stefan')
+        foto6 = st.checkbox("Gevangen", key=6)
+        st.image('graphics/rachel.jpg')
+
+        st.subheader('Zus Jasper, Willemijn + Jurgen + (Pepijn en Yentl)')
+        foto3 = st.checkbox("Gevangen", key=3)
+        st.image('graphics/willemijn.jpg')
+        st.image('graphics/willemijngezin.jpg')
+
+        st.subheader('Zusje Jasper, Elsemieke + Bram')
+        foto4 = st.checkbox("Gevangen", key=4)
+        st.image('graphics/elsemieke.jpg')
+
+        #oma's
+        st.subheader('Oma Verschelling + (Jack en Bea)')
+        foto7 = st.checkbox("Gevangen", key=7)
+        #st.image('graphics/oma martijn teresa.jpg')
+
+        st.subheader('Opa en oma Dieleman')
+        foto8 = st.checkbox("Gevangen", key=8)
+        #st.image('graphics/omi.jpg')
+
+        st.subheader('Oma Kunst (+Martijn + Teresa)')
+        foto9 = st.checkbox("Gevangen", key=9)
+        st.image('graphics/oma martijn teresa.jpg')
+
+        st.subheader('Oma Janssens (+ Mathijs)')
+        foto10 = st.checkbox("Gevangen", key=10)
+        st.image('graphics/omi.jpg')
+
+        #Vrienden
+        st.subheader('Wouter en Marthe')
+        foto101 = st.checkbox("Gevangen", key=101)
+        st.image('graphics/wouter.jpg')
+
+        st.subheader('Jim en Bente')
+        foto102 = st.checkbox("Gevangen", key=102)
+        st.image('graphics/jim.jpg')
+
+
+
+
+
+
+        st.markdown('''---''')
+        st.page_link("pages/Dresscode.py", label="Dresscode", icon=":material/arrow_forward:")
+        st.page_link("pages/Kadolijst.py", label="Kadolijst", icon=":material/arrow_forward:")
+        st.page_link("pages/Routebeschrijving.py", label="Routebeschrijving", icon=":material/arrow_forward:")
     authenticator.logout('Logout', 'main')
 elif authentication_status == False:
     st.error('Username/password is incorrect')
